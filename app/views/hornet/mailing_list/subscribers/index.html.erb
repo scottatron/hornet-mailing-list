@@ -1,0 +1,8 @@
+<div class="header">Mailing List Subscribers</div>
+<table>
+  <% @subscribers.each do |subscriber| %>
+  <tr>
+    <td><%= subscriber.email %></td>
+  </tr>
+  <% end %>
+</table>
