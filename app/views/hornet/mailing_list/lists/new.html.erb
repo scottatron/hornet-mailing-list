@@ -1,0 +1,6 @@
+<%= simple_form_for @list do |f| -%>
+  <%= f.input :type, label: 'List Provider', collection: @list.class::ProviderOptions %>
+  <%= f.input :provider_api_key, label: 'Provider API Key' %>
+  <%= f.input :provider_id, label: 'Provider ID' %>
+  <%= f.submit %>
+<% end -%>

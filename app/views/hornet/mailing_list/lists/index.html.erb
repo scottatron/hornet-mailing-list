@@ -1,0 +1,23 @@
+<div class="header">Mailing Lists</div>
+<div class="section">
+  <div class="tools"><%= link_to "Add Mailing List", new_list_path %></div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+      <th class="provider">Provider</th>
+      <th class="provider-id">Provider ID</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @lists.each do |list| %>
+    <tr>
+      <td class="name"><%= list.name %></td>
+      <td class="provider"><%= list.provider %></td>
+      <td class="provider-id"><%= list.provider_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
