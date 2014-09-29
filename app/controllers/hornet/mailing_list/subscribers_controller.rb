@@ -3,7 +3,13 @@ module Hornet
     class SubscribersController < HornetController
 
       def index
-        @subscribers = Subscriber.all
+        @subscribers = Subscriber.page(page).per(50)
+      end
+
+      private
+
+      def page
+        params[:page] || 1
       end
 
     end

@@ -1,8 +1,28 @@
 <div class="header">Mailing List Subscribers</div>
 <table>
+  <thead>
+    <tr>
+      <td><%= paginate @subscribers %></td>
+    </tr>
+  </thead>
   <% @subscribers.each do |subscriber| %>
   <tr>
     <td><%= subscriber.email %></td>
+    <td>
+      <% unless subscriber.lists.empty? %>
+      Subscribed to:
+      <ul>
+        <% subscriber.lists.each do |list| %>
+        <li><%= list.name %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </td>
   </tr>
   <% end %>
+  <tfoot>
+    <tr>
+      <td><%= paginate @subscribers %></td>
+    </tr>
+  </tfoot>
 </table>
